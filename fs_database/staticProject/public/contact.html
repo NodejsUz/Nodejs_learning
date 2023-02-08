@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Navbar</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+        <form class="row g-3 needs-validation" novalidate>
+            <div class="col-md-4">
+              <div class="form-outline">
+                <input type="text" class="form-control" id="validationCustom01" value="Mark" required />
+                <label for="validationCustom01" class="form-label">First name</label>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-outline">
+                <input type="text" class="form-control" id="validationCustom02" value="Otto" required />
+                <label for="validationCustom02" class="form-label">Last name</label>
+                <div class="valid-feedback">Looks good!</div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group form-outline">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
+                <label for="validationCustomUsername" class="form-label">Username</label>
+                <div class="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-outline">
+                <input type="text" class="form-control" id="validationCustom03" required />
+                <label for="validationCustom03" class="form-label">City</label>
+                <div class="invalid-feedback">Please provide a valid city.</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-outline">
+                <input type="text" class="form-control" id="validationCustom05" required />
+                <label for="validationCustom05" class="form-label">Zip</label>
+                <div class="invalid-feedback">Please provide a valid zip.</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                <label class="form-check-label" for="invalidCheck">Agree to terms and conditions</label>
+                <div class="invalid-feedback">You must agree before submitting.</div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+          </form>
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

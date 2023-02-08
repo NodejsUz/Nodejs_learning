@@ -1,0 +1,18 @@
+{
+  "name": "cli-tool",
+  "version": "1.0.0",
+  "description": "CLI-tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "new_World",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0",
+    "inquirer": "^9.1.4",
+    "mongoose": "^6.9.0",
+    "yargs": "^17.6.2"
+  }
+}

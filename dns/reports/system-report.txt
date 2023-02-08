@@ -1,0 +1,17 @@
+
+System Report
+-------------
+Timestamp: 2023-02-07T18:03:05.682Z
+
+System Info
+-----------
+Hostname: anvar-Inspiron-15-3567
+Architecture: x64
+Platform: linux
+Uptime: 40888.71 seconds
+
+Memory Usage
+------------
+Total Memory: 3973894144 bytes
+Free Memory: 1021358080 bytes
+  
