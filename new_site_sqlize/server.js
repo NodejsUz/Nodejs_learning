@@ -1,26 +1,30 @@
+require("dotenv").config();
+
 const express = require("express");
-const psql = require("./module/pg");
-const routers = require("./router/routes");
+const dbSqlz = require("./module/db");
+const routers = require("./router/router");
+
+const PORT = process.env.PORT
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 
-async function server(){
+async function server() {
     try {
-        let db = await psql();
+        let db = await dbSqlz();
         app.use((req, res, next) => {
             req.db = db;
-            next();
+            next()
         })
     } finally {
-        app.use('/v1', routers)
+        app.use("/v1", routers)
     }
 }
 
-server();
+server()
 
-app.listen(5000, () => {
-    console.log("server listen 5000 port");
+app.listen(PORT, () => {
+    console.log(`Server listen on ${PORT} port`);
 })
