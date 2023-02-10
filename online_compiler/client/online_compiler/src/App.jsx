@@ -6,6 +6,7 @@ function App() {
   const [code, setCode] = useState("");
   const [output, setOutPut] = useState("");
   const [language, setLanguage] = useState("cpp");
+  const [htmlCode, setHtmlCode] = useState("");
 
   const handleButton = async () => {
     const data = {
@@ -14,12 +15,21 @@ function App() {
     };
 
     try {
-      const output = await axios.post("http://localhost:5000/run", data);
-
-      setOutPut(output.data.output);
-      
+      if (language !== "html") {
+        const output = await axios.post("http://localhost:5000/run", data);
+        setOutPut(output.data.output);
+      }else {
+        setHtmlCode(`
+          <html>
+            <head>
+            </head>
+            <body>
+                ${code}
+            </body>
+          </html>
+        `)
+      }
     } catch (err) {
-      console.log(err);
       setOutPut(err.response.data.msg.stderr);
     }
   };
@@ -31,7 +41,7 @@ function App() {
         <select
           className="select-language"
           value={language}
-          onChange={(e) => {setLanguage(e.target.value); console.log(e.target.value)}}
+          onChange={(e) => {setLanguage(e.target.value)}}
         >
           <option value="cpp">C++</option>
           <option value="py">Python</option>
@@ -49,10 +59,14 @@ function App() {
           value={code}
           onChange={(e) => setCode(e.target.value)}
         ></textarea>
-
-        <textarea className="code-editor t2" rows="20" cols="65" value={output}>
-          {output}
-        </textarea>
+        {
+          language == "html" ? <iframe className="html-code t2" srcDoc={htmlCode}></iframe> : 
+          <textarea className="code-editor t2" rows="20" cols="65" 
+          value={output}>
+          </textarea>
+        }
+        
+        
       </div>
       <br />
     </div>
