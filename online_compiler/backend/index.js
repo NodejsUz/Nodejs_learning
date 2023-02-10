@@ -7,7 +7,6 @@ const { generateFile } = require("./generate");
 const { executeCpp } = require("./exucateCpp");
 const { executePy } = require("./exucatePy");
 const { exucateJs } = require("./exucateJs");
-const { exucateHtml } = require("./exucateHtml");
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
